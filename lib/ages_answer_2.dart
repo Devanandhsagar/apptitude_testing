@@ -1,85 +1,80 @@
 import 'package:flutter/material.dart';
-class agesanswer2 extends StatefulWidget {
+class AgesAnswer2 extends StatefulWidget {
   // final TextEditingController controller;
-  const agesanswer2({Key? key,}) : super(key: key);
+  const AgesAnswer2({Key? key,}) : super(key: key);
 
   @override
-  State<agesanswer2> createState() => _agesanswer2State();
+  State<AgesAnswer2> createState() => _AgesAnswer2State();
 }
 
-class _agesanswer2State extends State<agesanswer2> {
+class _AgesAnswer2State extends State<AgesAnswer2> {
   var a = TextEditingController();
   var b = TextEditingController();
   var c = TextEditingController();
   var d = TextEditingController();
   bool show = false;
-  int num1=0,num2=0,num3=0,num4=0,num5=0;
   var result='';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
     ),
-      body: Container(
-          child: Column(
-            children:[ SizedBox(height: 30,),Text('2)  Given 2 person ratio and sum and after n years ?'),
-              SizedBox(height: 30,),
-              TextField(
-                controller: a,
-                decoration: InputDecoration(
-                  label: Text('Enter the present ratio person_1'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: b,
-                decoration: InputDecoration(
-                  label: Text('Enter the  persent ratio person_2'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: c,
-                decoration: InputDecoration(
-                  label: Text('Enter the sum'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: d,
-                decoration: InputDecoration(
-                  label: Text('Enter after n years'),
-                ),
-              ),
-              SizedBox(height: 50,),
-              GestureDetector(
-                onTap: (){
-                  setState(() {
-                    show=!show;
-                    num1=int.parse(a.text);
-                    num2=int.parse(b.text);
-                    num3=int.parse(c.text);
-                    num4=int.parse(d.text);
-                    result = "Equation = person_1,s  age = $num3 * ($num1)/(${num1+num2}) =  ${(num3) * ((num1)/(num1+num2))} \n"
-                        "person_2 age = (sum - person_1 age)=  ${(num3)-((num3) * ((num1)/(num1+num2)))} \n"
-                        "Ratio of ages = (${(num3) * ((num1)/(num1+num2))}+$num4) / ${(num3)-((num3) * ((num1)/(num1+num2)))} \n"
-                        "ratios = ${((num3) * ((num1)/(num1+num2)))+num4} / ${((num3)-((num3) * ((num1)/(num1+num2))))+num4}";
-                    print(result);
-
-                  });
-                }, child: Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
-              ),
-              SizedBox(height: 30,),
-              Visibility(
-                visible: show,
-                child: Container(
-                  child: Text('$result ',style: TextStyle(fontWeight: FontWeight.bold),),
-                ),
-              ),
+      body: Column(
+        children:[ const SizedBox(height: 30,),const Text('2)  Given 2 person ratio and sum and after n years ?'),
+          const SizedBox(height: 30,),
+          TextField(
+            controller: a,
+            decoration: const InputDecoration(
+              label: Text('Enter the present ratio person_1'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: b,
+            decoration: const InputDecoration(
+              label: Text('Enter the  present ratio person_2'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: c,
+            decoration: const InputDecoration(
+              label: Text('Enter the sum'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: d,
+            decoration: const InputDecoration(
+              label: Text('Enter after n years'),
+            ),
+          ),
+          const SizedBox(height: 50,),
+          GestureDetector(
+            onTap: (){
+              setState(() {
+                show=!show;
+                int input1=0,input2= 0,input3=0,input4=0;
+                input1=int.parse(a.text);
+                input2=int.parse(b.text);
+                input3=int.parse(c.text);
+                input4=int.parse(d.text);
+                result = "Equation = person_1,s  age = $input3 * ($input1)/(${input1+input2}) =  ${(input3) * ((input1)/(input1+input2))} \n"
+                    "person_2 age = (sum - person_1 age)=  ${(input3)-((input3) * ((input1)/(input1+input2)))} \n"
+                    "Ratio of ages = (${(input3) * ((input1)/(input1+input2))}+$input4) / ${(input3)-((input3) * ((input1)/(input1+input2)))} \n"
+                    "ratios = ${((input3) * ((input1)/(input1+input2)))+input4} / ${((input3)-((input3) * ((input1)/(input1+input2))))+input4}";
+              });
+            }, child: const Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
+          ),
+          const SizedBox(height: 30,),
+          Visibility(
+            visible: show,
+            child: Text('$result ',style: const TextStyle(fontWeight: FontWeight.bold),),
+          ),
 
 
-            ],
-          )),
+        ],
+      ),
     );
 
   }

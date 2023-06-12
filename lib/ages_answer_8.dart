@@ -1,88 +1,85 @@
 import 'package:flutter/material.dart';
-class agesanswer8 extends StatefulWidget {
+class AgesAnswer8 extends StatefulWidget {
   // final TextEditingController controller;
-  const agesanswer8({Key? key,}) : super(key: key);
+  const AgesAnswer8({Key? key,}) : super(key: key);
 
   @override
-  State<agesanswer8> createState() => _agesanswer8State();
+  State<AgesAnswer8> createState() => _AgesAnswer8State();
 }
 
-class _agesanswer8State extends State<agesanswer8> {
+class _AgesAnswer8State extends State<AgesAnswer8> {
   var a = TextEditingController();
   var b = TextEditingController();
   var c = TextEditingController();
   var d = TextEditingController();
   bool show = false;
-  int num1=0,num2=0,num3=0,num4=0,num5=0;
   var result='';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
     ),
-      body: Container(
-          child: Column(
-            children:[ SizedBox(height: 30,),Text('8)  Given the person_1 age  n years ago is n times the  person_2 and n years hence and person_1 n of times the person_2 ?'),
-              SizedBox(height: 30,),
-              TextField(
-                controller: a,
-                decoration: InputDecoration(
-                  label: Text('Enter n yeras ago'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: b,
-                decoration: InputDecoration(
-                  label: Text('Enter the  person_1 n times of person_2'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: c,
-                decoration: InputDecoration(
-                  label: Text('Enter the n Years hence'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: d,
-                decoration: InputDecoration(
-                  label: Text('Enter person_1 equal no of times person_2 '
-                ),
-              ),
-              ),
-              SizedBox(height: 50,),
-              GestureDetector(
-                onTap: (){
-                  setState(() {
-                    show=!show;
-                    num1=int.parse(a.text);
-                    num2=int.parse(b.text);
-                    num3=int.parse(c.text);
-                    num4=int.parse(d.text);
-                    result = "Equation =  ( $num2 * x + $num1 ) + $num3 = $num4(x + $num1  + $num3 )\n"
-                        "$num2 * x - $num4 * x = $num4($num1+$num3) - $num1 - $num3 \n"
-                        ">>${num2-num4}* x = ${(num4 *(num1+num3))- num1 -num3} \n"
-                        "Value of x = ${((num4 *(num1+num3))- num1 -num3)/(num2-num4)}\n"
-                        "Ratio $num2 * x = ${num2 * (((num4 *(num1+num3))- num1 -num3)/(num2-num4)).abs() }\n"
-                        "Ratio  = ${num2 * (((num4 *(num1+num3))- num1 -num3)/(num2-num4)).abs() }";
-                    print(result);
+      body: Column(
+        children:[ const SizedBox(height: 30,),const Text('8)  Given the person_1 age  n years ago is n times the  person_2 and n years hence and person_1 n of times the person_2 ?'),
+          const SizedBox(height: 30,),
+          TextField(
+            controller: a,
+            decoration: const InputDecoration(
+              label: Text('Enter n years ago'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: b,
+            decoration: const InputDecoration(
+              label: Text('Enter the  person_1 n times of person_2'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: c,
+            decoration: const InputDecoration(
+              label: Text('Enter the n Years hence'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: d,
+            decoration: const InputDecoration(
+              label: Text('Enter person_1 equal no of times person_2 '
+            ),
+          ),
+          ),
+          const SizedBox(height: 50,),
+          GestureDetector(
+            onTap: (){
+              setState(() {
+                show=!show;
+                int input1=0,input2=0,input3=0,input4=0;
 
-                  });
-                }, child: Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
-              ),
-              SizedBox(height: 30,),
-              Visibility(
-                visible: show,
-                child: Container(
-                  child: Text('$result ',style: TextStyle(fontWeight: FontWeight.bold),),
-                ),
-              ),
+                input1=int.parse(a.text);
+                input2=int.parse(b.text);
+                input3=int.parse(c.text);
+                input4=int.parse(d.text);
+                result = "Equation =  ( $input2 * x + $input1 ) + $input3 = $input4(x + $input1  + $input3 )\n"
+                    "$input2 * x - $input4 * x = $input4($input1+$input3) - $input1 - $input3 \n"
+                    ">>${input2-input4}* x = ${(input4 *(input1+input3))- input1 -input3} \n"
+                    "Value of x = ${((input4 *(input1+input3))- input1 -input3)/(input2-input4)}\n"
+                    "Ratio $input2 * x = ${input2 * (((input4 *(input1+input3))- input1 -input3)/(input2-input4)).abs() }\n"
+                    "Ratio  = ${input2 * (((input4 *(input1+input3))- input1 -input3)/(input2-input4)).abs() }";
+
+              });
+            }, child: const Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
+          ),
+          const SizedBox(height: 30,),
+          Visibility(
+            visible: show,
+            child: Text('$result ',style: const TextStyle(fontWeight: FontWeight.bold),),
+          ),
 
 
-            ],
-          )),
+        ],
+      ),
     );
 
   }

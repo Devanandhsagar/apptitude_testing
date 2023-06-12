@@ -1,88 +1,85 @@
 import 'package:flutter/material.dart';
-class agesanswer7 extends StatefulWidget {
+class AgesAnswer7 extends StatefulWidget {
   // final TextEditingController controller;
-  const agesanswer7({Key? key,}) : super(key: key);
+  const AgesAnswer7({Key? key,}) : super(key: key);
 
   @override
-  State<agesanswer7> createState() => _agesanswer7State();
+  State<AgesAnswer7> createState() => _AgesAnswer7State();
 }
 
-class _agesanswer7State extends State<agesanswer7> {
+class _AgesAnswer7State extends State<AgesAnswer7> {
   var a = TextEditingController();
   var b = TextEditingController();
   var c = TextEditingController();
   var d = TextEditingController();
   bool show = false;
-  int num1=0,num2=0,num3=0,num4=0,num5=0;
   var result='';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
     ),
-      body: Container(
-          child: Column(
-            children:[ SizedBox(height: 30,),Text('7)  Given Average of two persons age  and n years after ratios.find the present age ?'),
-              SizedBox(height: 30,),
-              TextField(
-                controller: a,
-                decoration: InputDecoration(
-                  label: Text('Enter the Average of two persons'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: b,
-                decoration: InputDecoration(
-                  label: Text('Enter the n Years after'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: c,
-                decoration: InputDecoration(
-                  label: Text('Enter the ratio years after person_1'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: d,
-                decoration: InputDecoration(
-                  label: Text('Enter the ratio years after person_2'),
-                ),
-              ),
-              SizedBox(height: 50,),
-              GestureDetector(
-                onTap: (){
-                  setState(() {
-                    show=!show;
-                    num1=int.parse(a.text);
-                    num2=int.parse(b.text);
-                    num3=int.parse(c.text);
-                    num4=int.parse(d.text);
-                    num5=num1*2;
-                    result = "Equation = $num4 ( x + $num2 ) = $num3 ($num5 - x + $num2)\n"
-                        ">> $num4 * x + $num4 * $num2 = $num3 * (${num5+num2}  - $num3 * x \n"
-                        ">> ${num4 - num3} * x = ${(num4*num2)- (num3*(num5+num2))} \n"
-                        "value of x = ${((num4*num2)- (num3*(num5+num2)))/(num4 - num3)}\n"
-                        "persent age of person_1 = ${num3*((num4*num2)- (num3*(num5+num2)))/(num4 - num3)}\n"
-                        "persent age of person_2 = ${num4*((num4*num2)- (num3*(num5+num2)))/(num4 - num3)}";
-                    print(result);
-
-                  });
-                }, child: Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
-              ),
-              SizedBox(height: 30,),
-              Visibility(
-                visible: show,
-                child: Container(
-                  child: Text('$result ',style: TextStyle(fontWeight: FontWeight.bold),),
-                ),
-              ),
+      body: Column(
+        children:[ const SizedBox(height: 30,),const Text('7)  Given Average of two persons age  and n years after ratios.find the present age ?'),
+          const SizedBox(height: 30,),
+          TextField(
+            controller: a,
+            decoration: const InputDecoration(
+              label: Text('Enter the Average of two persons'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: b,
+            decoration: const InputDecoration(
+              label: Text('Enter the n Years after'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: c,
+            decoration: const InputDecoration(
+              label: Text('Enter the ratio years after person_1'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: d,
+            decoration: const InputDecoration(
+              label: Text('Enter the ratio years after person_2'),
+            ),
+          ),
+          const SizedBox(height: 50,),
+          GestureDetector(
+            onTap: (){
+              setState(() {
+                show=!show;
+                int input1=0,input2=0,input3=0,input4=0,totalAverage=0;
+                input1=int.parse(a.text);
+                input2=int.parse(b.text);
+                input3=int.parse(c.text);
+                input4=int.parse(d.text);
+                totalAverage=input1*2;
+                result = "Equation = $input4 ( x + $input2 ) = $input3 ($totalAverage - x + $input2)\n"
+                    ">> $input4 * x + $input4 * $input2 = $input3 * (${totalAverage+input2}  - $input3 * x \n"
+                    ">> ${input4 - input3} * x = ${(input4*input2)- (input3*(totalAverage+input2))} \n"
+                    "value of x = ${((input4*input2)- (input3*(totalAverage+input2)))/(input4 - input3)}\n"
+                    "present age of person_1 = ${input3*((input4*input2)- (input3*(totalAverage+input2)))/(input4 - input3)}\n"
+                    "present age of person_2 = ${input4*((input4*input2)- (input3*(totalAverage+input2)))/(input4 - input3)}";
 
 
-            ],
-          )),
+              });
+            }, child: const Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
+          ),
+          const SizedBox(height: 30,),
+          Visibility(
+            visible: show,
+            child: Text('$result ',style: const TextStyle(fontWeight: FontWeight.bold),),
+          ),
+
+
+        ],
+      ),
     );
 
   }

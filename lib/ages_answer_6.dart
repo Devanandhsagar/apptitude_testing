@@ -1,98 +1,94 @@
 import 'package:flutter/material.dart';
-class agesanswer6 extends StatefulWidget {
+class AgesAnswer6 extends StatefulWidget {
   // final TextEditingController controller;
-  const agesanswer6({Key? key,}) : super(key: key);
+  const AgesAnswer6({Key? key,}) : super(key: key);
 
   @override
-  State<agesanswer6> createState() => _agesanswer6State();
+  State<AgesAnswer6> createState() => _AgesAnswer6State();
 }
 
-class _agesanswer6State extends State<agesanswer6> {
+class _AgesAnswer6State extends State<AgesAnswer6> {
   var a = TextEditingController();
   var b = TextEditingController();
   var c = TextEditingController();
   var d = TextEditingController();
   var e= TextEditingController();
   bool show = false;
-  int num1=0,num2=0,num3=0,num4=0,num5=0;
   var result='';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
     ),
-      body: Container(
-          child: Column(
-            children:[ SizedBox(height: 30,),Text('6)  Given 2 persons ratio and n years after 2 person  ratio and find the difference ?'),
-              SizedBox(height: 30,),
-              TextField(
-                controller: a,
-                decoration: InputDecoration(
-                  label: Text('Enter the present ratio person_1'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: b,
-                decoration: InputDecoration(
-                  label: Text('Enter the  persent ratio person_2'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: c,
-                decoration: InputDecoration(
-                  label: Text('Enter the n Years after'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: d,
-                decoration: InputDecoration(
-                  label: Text('Enter the ratio years after person_1'),
-                ),
-              ),
-              SizedBox(height: 20,),
-              TextField(
-                controller: e,
-                decoration: InputDecoration(
-                  label: Text('Enter the ratio years after person_2'),
-                ),
-              ),
-              SizedBox(height: 50,),
-              GestureDetector(
-                onTap: (){
-                  setState(() {
-                    show=!show;
-                    num1=int.parse(a.text);
-                    num2=int.parse(b.text);
-                    num3=int.parse(c.text);
-                    num4=int.parse(d.text);
-                    num5=int.parse(e.text);
-                    result = "lets equation =   $num5 ($num1 * x + $num3) = $num4($num2 * x + $num3)\n"
-                        ">> ($num5 * $num1 * x) - ($num4 * $num2 * x) = ( $num4 * $num3 - $num3 * $num5 )\n"
-                        ">> ${(num5 * num1) - (num4 * num2)} * x = ${(num4 * num3)-(num3 *num5)}\n"
-                        "Value of x = ${(num5 * num1) - (num4 * num2)}/ ${(num4 * num3)-(num3 *num5)} \n"
-                        "x = ${((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2))} \n"
-                        "person_1 age = $num1 * x = ${(num1*(((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2))))}\n"
-                        "person_2 age = $num2 * x = ${(num2*(((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2))))}/n"
-                        "persons difference = ${((num1*(((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2)))) - (num2*(((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2))))).abs() }";
-                    print(result);
+      body: Column(
+        children:[ const SizedBox(height: 30,),const Text('6)  Given 2 persons ratio and n years after 2 person  ratio and find the difference ?'),
+          const SizedBox(height: 30,),
+          TextField(
+            controller: a,
+            decoration: const InputDecoration(
+              label: Text('Enter the present ratio person_1'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: b,
+            decoration: const InputDecoration(
+              label: Text('Enter the  present ratio person_2'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: c,
+            decoration: const InputDecoration(
+              label: Text('Enter the n Years after'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: d,
+            decoration: const InputDecoration(
+              label: Text('Enter the ratio years after person_1'),
+            ),
+          ),
+          const SizedBox(height: 20,),
+          TextField(
+            controller: e,
+            decoration: const InputDecoration(
+              label: Text('Enter the ratio years after person_2'),
+            ),
+          ),
+          const SizedBox(height: 50,),
+          GestureDetector(
+            onTap: (){
+              setState(() {
+                show=!show;
+                int input1=0,input2=0,input3=0,input4=0,input5=0;
+                input1=int.parse(a.text);
+                input2=int.parse(b.text);
+                input3=int.parse(c.text);
+                input4=int.parse(d.text);
+                input5=int.parse(e.text);
+                result = "lets equation =   $input5 ($input1 * x + $input3) = $input4($input2 * x + $input3)\n"
+                    ">> ($input5 * $input1 * x) - ($input4 * $input2 * x) = ( $input4 * $input3 - $input3 * $input5 )\n"
+                    ">> ${(input5 * input1) - (input4 * input2)} * x = ${(input4 * input3)-(input3 *input5)}\n"
+                    "Value of x = ${(input5 * input1) - (input4 * input2)}/ ${(input4 * input3)-(input3 *input5)} \n"
+                    "x = ${((input4 * input3)-(input3 *input5))/((input5 * input1) - (input4 * input2))} \n"
+                    "person_1 age = $input1 * x = ${(input1*(((input4 * input3)-(input3 *input5))/((input5 * input1) - (input4 * input2))))}\n"
+                    "person_2 age = $input2 * x = ${(input2*(((input4 * input3)-(input3 *input5))/((input5 * input1) - (input4 * input2))))}/n"
+                    "persons difference = ${((input1*(((input4 * input3)-(input3 *input5))/((input5 * input1) - (input4 * input2)))) - (input2*(((input4 * input3)-(input3 *input5))/((input5 * input1) - (input4 * input2))))).abs() }";
 
-                  });
-                }, child: Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
-              ),
-              SizedBox(height: 30,),
-              Visibility(
-                visible: show,
-                child: Container(
-                  child: Text('$result ',style: TextStyle(fontWeight: FontWeight.bold),),
-                ),
-              ),
+              });
+            }, child: const Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
+          ),
+          const SizedBox(height: 30,),
+          Visibility(
+            visible: show,
+            child: Text('$result ',style: const TextStyle(fontWeight: FontWeight.bold),),
+          ),
 
 
-            ],
-          )),
+        ],
+      ),
     );
 
   }
