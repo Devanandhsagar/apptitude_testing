@@ -69,15 +69,18 @@ class _agesanswer6State extends State<agesanswer6> {
                     num3=int.parse(c.text);
                     num4=int.parse(d.text);
                     num5=int.parse(e.text);
-                    result = "Equation =   $num5  (  $num1  * x -   $num3   =  $num4  ( x -  $num3 ) \n"
-                        ">> $num5 * $num1 * x  - $num5 * $num3 = $num4 * x - $num4 * $num3  \n"
-                        ">>  ${num5*num1} * x - $num4 * x = ${num5*num3} - ${num4*num3} \n"
-                        ">> ${(num5*num1)-num4} * x = ${(num5*num3)-(num4*num3)} \n"
-                        ">> Value x = ${((num5*num3)-(num4*num3))/((num5*num1)-num4)}";
+                    result = "lets equation =   $num5 ($num1 * x + $num3) = $num4($num2 * x + $num3)\n"
+                        ">> ($num5 * $num1 * x) - ($num4 * $num2 * x) = ( $num4 * $num3 - $num3 * $num5 )\n"
+                        ">> ${(num5 * num1) - (num4 * num2)} * x = ${(num4 * num3)-(num3 *num5)}\n"
+                        "Value of x = ${(num5 * num1) - (num4 * num2)}/ ${(num4 * num3)-(num3 *num5)} \n"
+                        "x = ${((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2))} \n"
+                        "person_1 age = $num1 * x = ${(num1*(((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2))))}\n"
+                        "person_2 age = $num2 * x = ${(num2*(((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2))))}/n"
+                        "persons difference = ${((num1*(((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2)))) - (num2*(((num4 * num3)-(num3 *num5))/((num5 * num1) - (num4 * num2))))).abs() }";
                     print(result);
 
                   });
-                }, child: Text('Sumit' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
+                }, child: Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
               ),
               SizedBox(height: 30,),
               Visibility(

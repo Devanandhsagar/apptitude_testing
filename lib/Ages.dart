@@ -1,5 +1,5 @@
 
-import 'package:apptitude_test/ages_answer.dart';
+import 'package:apptitude_test/ages_answer1.dart';
 import 'package:flutter/material.dart';
 
 import 'ages_answer_10.dart';
@@ -47,7 +47,7 @@ class _AgesState extends State<Ages> {
         },
         ),
         ListTile(
-          title: Text('5)  Given 2 persons ratio and n years after 2 person  ratio and n1 years ago age is  ?'),onTap: (){
+          title: Text('5)  Given 2 persons ratio and n years hence 2 person  ratio and n1 years ago age is  ?'),onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (_)=>agesanswer5()));
         },
         ),

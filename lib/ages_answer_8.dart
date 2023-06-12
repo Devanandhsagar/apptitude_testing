@@ -61,15 +61,16 @@ class _agesanswer8State extends State<agesanswer8> {
                     num2=int.parse(b.text);
                     num3=int.parse(c.text);
                     num4=int.parse(d.text);
-                    result = "Equation =   $num5  (  $num1  * x -   $num3   =  $num4  ( x -  $num3 ) \n"
-                        ">> $num5 * $num1 * x  - $num5 * $num3 = $num4 * x - $num4 * $num3  \n"
-                        ">>  ${num5*num1} * x - $num4 * x = ${num5*num3} - ${num4*num3} \n"
-                        ">> ${(num5*num1)-num4} * x = ${(num5*num3)-(num4*num3)} \n"
-                        ">> Value x = ${((num5*num3)-(num4*num3))/((num5*num1)-num4)}";
+                    result = "Equation =  ( $num2 * x + $num1 ) + $num3 = $num4(x + $num1  + $num3 )\n"
+                        "$num2 * x - $num4 * x = $num4($num1+$num3) - $num1 - $num3 \n"
+                        ">>${num2-num4}* x = ${(num4 *(num1+num3))- num1 -num3} \n"
+                        "Value of x = ${((num4 *(num1+num3))- num1 -num3)/(num2-num4)}\n"
+                        "Ratio $num2 * x = ${num2 * (((num4 *(num1+num3))- num1 -num3)/(num2-num4)).abs() }\n"
+                        "Ratio  = ${num2 * (((num4 *(num1+num3))- num1 -num3)/(num2-num4)).abs() }";
                     print(result);
 
                   });
-                }, child: Text('Sumit' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
+                }, child: Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
               ),
               SizedBox(height: 30,),
               Visibility(

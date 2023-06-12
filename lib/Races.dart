@@ -11,7 +11,7 @@ class _RacesState extends State<Races> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,title: Text('Races and Games'),
+        centerTitle: true,title: Text('Stocks and Shares'),
       ),
     );
   }

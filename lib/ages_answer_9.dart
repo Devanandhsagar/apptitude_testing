@@ -69,15 +69,17 @@ class _agesanswer9State extends State<agesanswer9> {
                     num3=int.parse(c.text);
                     num4=int.parse(d.text);
                     num5=int.parse(e.text);
-                    result = "Equation =   $num5  (  $num1  * x -   $num3   =  $num4  ( x -  $num3 ) \n"
-                        ">> $num5 * $num1 * x  - $num5 * $num3 = $num4 * x - $num4 * $num3  \n"
-                        ">>  ${num5*num1} * x - $num4 * x = ${num5*num3} - ${num4*num3} \n"
-                        ">> ${(num5*num1)-num4} * x = ${(num5*num3)-(num4*num3)} \n"
-                        ">> Value x = ${((num5*num3)-(num4*num3))/((num5*num1)-num4)}";
+                    result = "Person_1 and person_2 = $num1 : $num5  = 1 : ($num2/$num1)\n"
+                        "person_1 and person_3 = $num3 : $num4 = 1 : ($num4/$num3)\n"
+                        "x + ($num2/$num1) + ($num4/$num3) = $num5 \n"
+                        "x = ${num5/(1+(num2/num1)+(num4/num3))} \n"
+                        "person_1 age ${(num2/num1) * (num5/(1+(num2/num1)+(num4/num3)))}\n"
+                        "person_2 age ${(num4/num3) * (num5/(1+(num2/num1)+(num4/num3)))}\n"
+                        "person_3 age ${(num5/(1+(num2/num1)+(num4/num3)))}";
                     print(result);
 
                   });
-                }, child: Text('Sumit' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
+                }, child: Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
               ),
               SizedBox(height: 30,),
               Visibility(

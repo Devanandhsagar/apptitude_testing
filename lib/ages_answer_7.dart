@@ -13,7 +13,7 @@ class _agesanswer7State extends State<agesanswer7> {
   var c = TextEditingController();
   var d = TextEditingController();
   bool show = false;
-  int num1=0,num2=0,num3=0,num4=0;
+  int num1=0,num2=0,num3=0,num4=0,num5=0;
   var result='';
 
   @override
@@ -60,11 +60,17 @@ class _agesanswer7State extends State<agesanswer7> {
                     num2=int.parse(b.text);
                     num3=int.parse(c.text);
                     num4=int.parse(d.text);
-                    result = "Result";
+                    num5=num1*2;
+                    result = "Equation = $num4 ( x + $num2 ) = $num3 ($num5 - x + $num2)\n"
+                        ">> $num4 * x + $num4 * $num2 = $num3 * (${num5+num2}  - $num3 * x \n"
+                        ">> ${num4 - num3} * x = ${(num4*num2)- (num3*(num5+num2))} \n"
+                        "value of x = ${((num4*num2)- (num3*(num5+num2)))/(num4 - num3)}\n"
+                        "persent age of person_1 = ${num3*((num4*num2)- (num3*(num5+num2)))/(num4 - num3)}\n"
+                        "persent age of person_2 = ${num4*((num4*num2)- (num3*(num5+num2)))/(num4 - num3)}";
                     print(result);
 
                   });
-                }, child: Text('Sumit' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
+                }, child: Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
               ),
               SizedBox(height: 30,),
               Visibility(
