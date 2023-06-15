@@ -12,7 +12,6 @@ class _RacesAnswer10State extends State<RacesAnswer10> {
   var b = TextEditingController();
   var c = TextEditingController();
   var d = TextEditingController();
-  var e= TextEditingController();
   bool show = false;
   var result='';
 
@@ -26,7 +25,7 @@ class _RacesAnswer10State extends State<RacesAnswer10> {
           TextField(
             controller: a,
             decoration: const InputDecoration(
-              label: Text('Enter the present ratio person_1'),
+              label: Text('Enter distance of race'),
 
             ),
             textInputAction: TextInputAction.next,
@@ -37,7 +36,7 @@ class _RacesAnswer10State extends State<RacesAnswer10> {
           TextField(
             controller: b,
             decoration: const InputDecoration(
-              label: Text('Enter the  present ratio person_2'),
+              label: Text('Enter the person_1 beats person_2'),
             ),
             // textInputAction: TextInputAction.next,
             // onSubmitted: (_) => FocusScope.of(context).nextFocus(),
@@ -46,7 +45,7 @@ class _RacesAnswer10State extends State<RacesAnswer10> {
           TextField(
             controller: c,
             decoration: const InputDecoration(
-              label: Text('Enter the n Years after'),
+              label: Text('Enter the person_3'),
             ),
             // textInputAction: TextInputAction.next,
             // onSubmitted: (_) => FocusScope.of(context).nextFocus(),
@@ -55,33 +54,27 @@ class _RacesAnswer10State extends State<RacesAnswer10> {
           TextField(
             controller: d,
             decoration: const InputDecoration(
-              label: Text('Enter the ratio years after person_1'),
+              label: Text('Enter the another distance'),
             ),
             // textInputAction: TextInputAction.next,
             // onSubmitted: (_) => FocusScope.of(context).nextFocus(),
-          ),
-          const SizedBox(height: 20,),
-          TextField(
-            controller: e,
-            decoration: const InputDecoration(
-              label: Text('Enter the ratio years after person_2'),
-            ),
           ),
           const SizedBox(height: 50,),
           GestureDetector(
             onTap: (){
               setState(() {
                 show=!show;
-                int input1=0,input3=0,input5=0;
+                int input1=0,input2=0,input3=0,input4=0;
                 input1=int.parse(a.text);
+                input2=int.parse(b.text);
                 input3=int.parse(c.text);
-                input5=int.parse(e.text);
-                result = "Equation =   $input5  (  $input1  * x -   $input3 )   =  $input5  ( x -  $input3 ) \n"
-                    ">> $input5 * $input1 * x  - $input5 * $input3 = $input5 * x - $input5 * $input3  \n"
-                    ">>  ${input5*input1} * x - $input5 * x = ${input5*input3} - ${input5*input3} \n"
-                    ">> ${(input5*input1)-input5} * x = ${(input5*input3)-(input5*input3)} \n"
-                    ">> Value x = ${((input5*input3)-(input5*input3))/((input5*input1)-input5)}";
-
+                input4=int.parse(d.text);
+                result = "person_1 : person_2 = $input1 : ${input1-input2} \n"
+                    "person_1 : person_3 = $input1 : ${input1-input3}\n"
+                    "person_3/person_2 = person_3/person_1 * person_1/person_2 = ${input1-input2}/$input1 * $input1 /${input1-input3} \n"
+                    ">>${input1-input3} / ${(input1 - input3)/(((input1-input2)/input1) * (input1/(input1-input3)))}\n"
+                    "${1/((input1-input3)- ((input1 - input3)/(((input1-input2)/input1) * (input1/(input1-input3)))))} * $input4 \n"
+                    "${((1/((input1-input3)- ((input1 - input3)/(((input1-input2)/input1) * (input1/(input1-input3)))))) * input4).abs()}  m";
               });
             }, child: const Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,
           ),

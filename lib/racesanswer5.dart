@@ -68,11 +68,11 @@ class _RacesAnswer5State extends State<RacesAnswer5> {
                 input2=int.parse(b.text);
                 input3=int.parse(c.text);
                 input4=int.parse(d.text);
-                result = "Equation =   $input3  (  $input1  * x -   $input2 )   =  $input3  ( x -  $input2 ) \n"
-                    ">> $input3 * $input1 * x  - $input3 * $input2 = $input3 * x - $input3 * $input2  \n"
-                    ">>  ${input3*input1} * x - $input3 * x = ${input3*input2} - ${input3*input2} \n"
-                    ">> ${(input3*input1)-input3} * x = ${(input3*input2)-(input3*input2)} \n"
-                    ">> Value x = ${((input3*input2)-(input3*input2))/((input3*input1)-input3)}";
+                result = "To reach the winnings post person_1 has to cover $input1 - $input4 m = ${input1-input4}\n"
+                    "While person_1 covers $input2 m\n"
+                    "person_2 to covers  $input3 m \n"
+                    "while covers of ${input1-input4} , person_2 cover ($input3/$input2 * ${input1-input4} = ${(input3/input2)*(input1-input4)} m \n"
+                    "person_1 wins by = ($input1 -${(input3/input2)*(input1-input4)} = ${input1-((input3/input2)*(input1-input4))} m";
 
               });
             }, child: const Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,

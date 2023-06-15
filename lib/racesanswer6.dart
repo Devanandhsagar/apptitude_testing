@@ -11,8 +11,6 @@ class _RacesAnswer6State extends State<RacesAnswer6> {
   var a = TextEditingController();
   var b = TextEditingController();
   var c = TextEditingController();
-  var d = TextEditingController();
-  var e= TextEditingController();
   bool show = false;
   var result='';
 
@@ -26,7 +24,7 @@ class _RacesAnswer6State extends State<RacesAnswer6> {
           TextField(
             controller: a,
             decoration: const InputDecoration(
-              label: Text('Enter the present ratio person_1'),
+              label: Text('Enter distance in meters'),
 
             ),
             textInputAction: TextInputAction.next,
@@ -37,7 +35,7 @@ class _RacesAnswer6State extends State<RacesAnswer6> {
           TextField(
             controller: b,
             decoration: const InputDecoration(
-              label: Text('Enter the  present ratio person_2'),
+              label: Text('Enter the  person_1 covers in seconds'),
             ),
             // textInputAction: TextInputAction.next,
             // onSubmitted: (_) => FocusScope.of(context).nextFocus(),
@@ -46,41 +44,23 @@ class _RacesAnswer6State extends State<RacesAnswer6> {
           TextField(
             controller: c,
             decoration: const InputDecoration(
-              label: Text('Enter the n Years after'),
+              label: Text('Enter the  person_2 covers in seconds'),
             ),
             // textInputAction: TextInputAction.next,
             // onSubmitted: (_) => FocusScope.of(context).nextFocus(),
-          ),
-          const SizedBox(height: 20,),
-          TextField(
-            controller: d,
-            decoration: const InputDecoration(
-              label: Text('Enter the ratio years after person_1'),
-            ),
-            // textInputAction: TextInputAction.next,
-            // onSubmitted: (_) => FocusScope.of(context).nextFocus(),
-          ),
-          const SizedBox(height: 20,),
-          TextField(
-            controller: e,
-            decoration: const InputDecoration(
-              label: Text('Enter the ratio years after person_2'),
-            ),
           ),
           const SizedBox(height: 50,),
           GestureDetector(
             onTap: (){
               setState(() {
                 show=!show;
-                int input1=0,input3=0,input5=0;
+                int input1=0,input2=0,input3=0;
                 input1=int.parse(a.text);
+                input2=int.parse(b.text);
                 input3=int.parse(c.text);
-                input5=int.parse(e.text);
-                result = "Equation =   $input5  (  $input1  * x -   $input3 )   =  $input5  ( x -  $input3 ) \n"
-                    ">> $input5 * $input1 * x  - $input5 * $input3 = $input5 * x - $input5 * $input3  \n"
-                    ">>  ${input5*input1} * x - $input5 * x = ${input5*input3} - ${input5*input3} \n"
-                    ">> ${(input5*input1)-input5} * x = ${(input5*input3)-(input5*input3)} \n"
-                    ">> Value x = ${((input5*input3)-(input5*input3))/((input5*input1)-input5)}";
+                result = "Distance covered by person_2 in $input3 = $input1 \n"
+                    "Distance covered by in $input2 = ($input1/$input3)*$input2 = ${(input1/input3)*input2}\n"
+                    "person_2 was distance ($input1 - ${(input1/input3)*input2} = ${input1 - ((input1/input3)*input2)}";
 
               });
             }, child: const Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,

@@ -11,22 +11,19 @@ class _RacesAnswer7State extends State<RacesAnswer7> {
   var a = TextEditingController();
   var b = TextEditingController();
   var c = TextEditingController();
-  var d = TextEditingController();
-  var e= TextEditingController();
   bool show = false;
   var result='';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
     ),
       body: Column(
-        children:[ const SizedBox(height: 30,),const Text('7)  Given distance person_1 defeated person_2 by n sec  ?'),
+        children:[ const SizedBox(height: 30,),const Text('7)  Given distance person_1 defeated person_2 by n sec  and person_1 speed ?'),
           const SizedBox(height: 30,),
           TextField(
             controller: a,
             decoration: const InputDecoration(
-              label: Text('Enter the present ratio person_1'),
+              label: Text('Enter the distance'),
 
             ),
             textInputAction: TextInputAction.next,
@@ -37,7 +34,7 @@ class _RacesAnswer7State extends State<RacesAnswer7> {
           TextField(
             controller: b,
             decoration: const InputDecoration(
-              label: Text('Enter the  present ratio person_2'),
+              label: Text('Enter defeated in seconds'),
             ),
             // textInputAction: TextInputAction.next,
             // onSubmitted: (_) => FocusScope.of(context).nextFocus(),
@@ -46,41 +43,25 @@ class _RacesAnswer7State extends State<RacesAnswer7> {
           TextField(
             controller: c,
             decoration: const InputDecoration(
-              label: Text('Enter the n Years after'),
+              label: Text('Enter the person_1 speed'),
             ),
             // textInputAction: TextInputAction.next,
             // onSubmitted: (_) => FocusScope.of(context).nextFocus(),
           ),
-          const SizedBox(height: 20,),
-          TextField(
-            controller: d,
-            decoration: const InputDecoration(
-              label: Text('Enter the ratio years after person_1'),
-            ),
-            // textInputAction: TextInputAction.next,
-            // onSubmitted: (_) => FocusScope.of(context).nextFocus(),
-          ),
-          const SizedBox(height: 20,),
-          TextField(
-            controller: e,
-            decoration: const InputDecoration(
-              label: Text('Enter the ratio years after person_2'),
-            ),
-          ),
+
           const SizedBox(height: 50,),
           GestureDetector(
             onTap: (){
               setState(() {
                 show=!show;
-                int input1=0,input3=0,input5=0;
+                int input1=0,input2=0,input3=0;
                 input1=int.parse(a.text);
+                input2=int.parse(b.text);
                 input3=int.parse(c.text);
-                input5=int.parse(e.text);
-                result = "Equation =   $input5  (  $input1  * x -   $input3 )   =  $input5  ( x -  $input3 ) \n"
-                    ">> $input5 * $input1 * x  - $input5 * $input3 = $input5 * x - $input5 * $input3  \n"
-                    ">>  ${input5*input1} * x - $input5 * x = ${input5*input3} - ${input5*input3} \n"
-                    ">> ${(input5*input1)-input5} * x = ${(input5*input3)-(input5*input3)} \n"
-                    ">> Value x = ${((input5*input3)-(input5*input3))/((input5*input1)-input5)}";
+                result = "person_1 speed = $input3 km/hr = ($input3 * 5/18) = ${input3*(5/18)} m/sec \n"
+                    "Time taken person_1 cover $input1 = ($input1 * 1/${input3*(5/18)} = ${input1 * (1/(input3*(5/18)))} \n"
+                    "Time taken to person_2 = (${input1 * (1/(input3*(5/18)))} + $input2 = ${(input1 * (1/(input3*(5/18))))+input2} \n"
+                    "person_2 = $input1/${(input1 * (1/(input3*(5/18))))+input2} * 18/5 = ${(input1/((input1 /(1/(input3*(5/18))))+input2))*(18/5)}  km/hr";
 
               });
             }, child: const Text('Show/Hide' , style: TextStyle(color: Colors.black ,fontWeight: FontWeight.bold),) ,

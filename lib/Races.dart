@@ -56,7 +56,7 @@ class _RacesState extends State<Races> {
           },
           ),
           ListTile(
-            title: const Text('7)  Given distance person_1 defeated person_2 by n sec  ?'),onTap: (){
+            title: const Text('7)   Given distance person_1 defeated person_2 by n sec  and person_1 speed  ?'),onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (_)=>const RacesAnswer7()));
           },
           ),
