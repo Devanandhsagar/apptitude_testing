@@ -1,13 +1,13 @@
-import 'package:apptitude_test/racesanswer1.dart';
-import 'package:apptitude_test/racesanswer10.dart';
-import 'package:apptitude_test/racesanswer2.dart';
-import 'package:apptitude_test/racesanswer3.dart';
-import 'package:apptitude_test/racesanswer4.dart';
-import 'package:apptitude_test/racesanswer5.dart';
-import 'package:apptitude_test/racesanswer6.dart';
-import 'package:apptitude_test/racesanswer7.dart';
-import 'package:apptitude_test/racesanswer8.dart';
-import 'package:apptitude_test/racesanswer9.dart';
+import 'package:apptitude_test/races-answer1.dart';
+import 'package:apptitude_test/races-answer10.dart';
+import 'package:apptitude_test/races-answer2.dart';
+import 'package:apptitude_test/races-answer3.dart';
+import 'package:apptitude_test/races-answer4.dart';
+import 'package:apptitude_test/races-answer5.dart';
+import 'package:apptitude_test/races-answer6.dart';
+import 'package:apptitude_test/races-answer7.dart';
+import 'package:apptitude_test/races-answer8.dart';
+import 'package:apptitude_test/races-answer9.dart';
 import 'package:flutter/material.dart';
 class Races extends StatefulWidget {
   const Races({Key? key}) : super(key: key);

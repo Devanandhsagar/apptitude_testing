@@ -1,8 +1,8 @@
 import 'package:apptitude_test/Ages.dart';
 import 'package:apptitude_test/Average.dart';
 import 'package:apptitude_test/Percentage.dart';
-import 'package:apptitude_test/Races.dart';
-import 'package:apptitude_test/Stocks.dart';
+import 'package:apptitude_test/races.dart';
+import 'package:apptitude_test/stocks.dart';
 import 'package:flutter/material.dart';
 class homepage extends StatelessWidget {
   const homepage({Key? key}) : super(key: key);
